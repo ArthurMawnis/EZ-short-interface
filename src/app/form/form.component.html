@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="center">
+    <form>
+      <mat-form-field class="width: 100%;">
+        <mat-label>Original Url</mat-label>
+        <input
+          matInput
+          placeholder="Enter your URL"
+          [(ngModel)]="originalUrl"
+          name="originalUrl"
+        />
+      </mat-form-field>
+    </form>
+    <div>
+      <button mat-flat-button color="primary" (click)="shortendGivenUrl()">
+        Shorten Url
+      </button>
+    </div>
+
+    <div
+      *ngIf="shortedUrl != '' && shortedUrl != undefined && shortedUrl != null"
+    >
+      <label type="text">Shortened url:</label>
+      <a [href]="shortedUrl"> {{ shortedUrl }}</a>
+    </div>
+  </div>
+</div>
